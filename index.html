@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f3eb">
+  <meta name="description" content="Nail art com personalidade no Alter Ego Studio, em Poços de Caldas. Conheça os trabalhos e agende seu horário pelo WhatsApp.">
+  <title>Alter Ego Studio Nail Art | Poços de Caldas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f6f3eb;
+      --ink: #20231e;
+      --muted: #686b62;
+      --coral: #e85c43;
+      --coral-dark: #c94331;
+      --lime: #d7ed74;
+      --line: #d9d7cd;
+      --white: #fffefa;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    button, input, select { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .wrap { width: min(1180px, calc(100% - 64px)); margin-inline: auto; }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 16px;
+      color: var(--coral-dark);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 23px; height: 1px; background: currentColor; content: ""; }
+    .serif { font-family: var(--serif); font-weight: 500; }
+    .topbar {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      min-height: 76px;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; }
+    .brand-mark {
+      display: grid;
+      width: 37px;
+      aspect-ratio: 1;
+      place-items: center;
+      border: 1px solid var(--ink);
+      border-radius: 50%;
+      font-family: var(--serif);
+      font-size: 18px;
+      font-style: italic;
+    }
+    .brand-name { font-family: var(--serif); font-size: 19px; line-height: 1; }
+    .brand-sub { display: block; margin-top: 5px; font-family: var(--sans); font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+    .nav { display: flex; align-items: center; gap: 31px; }
+    .nav a { font-size: 12px; font-weight: 600; text-decoration: none; }
+    .nav a:not(.nav-cta):hover { color: var(--coral-dark); }
+    .nav-cta, .button {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 19px;
+      border: 1px solid var(--ink);
+      border-radius: 2px;
+      background: var(--ink);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .18s ease, color .18s ease, transform .18s ease;
+    }
+    .nav-cta { min-height: 39px; padding-inline: 16px; }
+    .nav-cta:hover, .button:hover { transform: translateY(-2px); background: var(--coral); border-color: var(--coral); }
+    .button-light { background: transparent; color: var(--ink); }
+    .button-light:hover { color: white; }
+    .arrow { font-size: 16px; line-height: 1; }
+
+    .hero {
+      display: grid;
+      min-height: 596px;
+      grid-template-columns: 1fr .87fr;
+      align-items: center;
+      gap: 7%;
+      padding-block: 48px 65px;
+    }
+    .hero-copy { position: relative; z-index: 1; padding-block: 28px; }
+    .hero h1 {
+      max-width: 650px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(56px, 7.4vw, 99px);
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: .96;
+    }
+    .hero h1 em { color: var(--coral); font-weight: 500; }
+    .hero-text { max-width: 390px; margin: 25px 0 27px; color: var(--muted); font-size: 15px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .hero-rating { display: flex; align-items: center; gap: 10px; margin-top: 34px; font-size: 12px; }
+    .stars { color: var(--coral-dark); letter-spacing: 2px; }
+    .hero-rating strong { font-size: 13px; }
+    .hero-rating span:last-child { color: var(--muted); }
+    .hero-image { position: relative; width: 100%; max-width: 430px; justify-self: end; }
+    .hero-image::before {
+      position: absolute;
+      z-index: -1;
+      top: -19px;
+      right: -17px;
+      width: 76%;
+      height: 73%;
+      background: var(--lime);
+      content: "";
+    }
+    .hero-image img { display: block; width: 100%; height: 430px; object-fit: cover; object-position: center 45%; }
+    .image-caption {
+      position: absolute;
+      right: -18px;
+      bottom: 23px;
+      max-width: 190px;
+      padding: 13px 15px;
+      background: var(--white);
+      font-family: var(--serif);
+      font-size: 15px;
+      font-style: italic;
+      line-height: 1.35;
+    }
+    .image-caption b { display: block; margin-top: 5px; color: var(--coral-dark); font-family: var(--sans); font-size: 9px; font-style: normal; letter-spacing: 1px; text-transform: uppercase; }
+    .ticker { overflow: hidden; border-block: 1px solid var(--ink); background: var(--lime); }
+    .ticker-inner { display: flex; width: max-content; min-height: 53px; align-items: center; gap: 29px; animation: drift 30s linear infinite; }
+    .ticker span { font-family: var(--serif); font-size: 18px; font-style: italic; white-space: nowrap; }
+    .ticker i { color: var(--coral-dark); font-family: var(--sans); font-size: 16px; font-style: normal; }
+    @keyframes drift { to { transform: translateX(-50%); } }
+
+    section { scroll-margin-top: 28px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; }
+    .section-head h2, .about-copy h2, .booking-copy h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(38px, 5vw, 58px);
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 1.04;
+    }
+    .section-head p { max-width: 280px; margin: 0 0 5px; color: var(--muted); font-size: 13px; }
+    .portfolio { padding-block: 102px 110px; }
+    .gallery { display: grid; grid-template-columns: 1.14fr .86fr .86fr; gap: 16px; margin-top: 37px; }
+    .work { position: relative; min-width: 0; overflow: hidden; background: #e5e0d5; }
+    .work img { display: block; width: 100%; height: 355px; object-fit: cover; transition: transform .45s ease; }
+    .work:first-child img { height: 438px; }
+    .work:hover img { transform: scale(1.035); }
+    .work-label { position: absolute; right: 12px; bottom: 12px; left: 12px; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 11px 13px; background: var(--white); font-family: var(--serif); font-size: 16px; }
+    .work-label span:last-child { color: var(--coral-dark); font-family: var(--sans); font-size: 10px; font-weight: 700; }
+    .portfolio-note { margin: 17px 0 0; color: var(--muted); font-size: 11px; }
+
+    .about { display: grid; grid-template-columns: .8fr 1fr; gap: 11%; align-items: center; padding: 72px max(32px, calc((100% - 1180px) / 2)); background: #e9e5da; }
+    .about-art { position: relative; min-height: 337px; padding: 35px; background: var(--coral); }
+    .about-art::after { position: absolute; inset: 14px; border: 1px solid rgba(255,255,255,.55); content: ""; }
+    .about-quote { position: absolute; z-index: 1; right: 31px; bottom: 28px; left: 31px; color: #fffdf6; font-family: var(--serif); font-size: clamp(35px, 4vw, 51px); line-height: 1.05; }
+    .about-quote em { color: var(--lime); }
+    .about-copy p:not(.eyebrow) { max-width: 450px; margin: 18px 0 0; color: #54574e; font-size: 14px; }
+    .about-details { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 25px; font-size: 12px; font-weight: 700; }
+    .about-details span { display: inline-flex; align-items: center; gap: 8px; }
+    .about-details i { color: var(--coral-dark); font-size: 16px; font-style: normal; }
+
+    .booking { display: grid; grid-template-columns: .9fr 1fr; gap: 12%; padding-block: 105px 112px; }
+    .booking-copy { align-self: start; }
+    .booking-copy > p:not(.eyebrow) { max-width: 380px; margin: 18px 0 26px; color: var(--muted); font-size: 14px; }
+    .contact-lines { display: grid; gap: 15px; padding-top: 23px; border-top: 1px solid var(--line); }
+    .contact-lines a { width: fit-content; font-size: 13px; font-weight: 600; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .booking-form { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; align-content: start; padding-top: 9px; }
+    .field { display: grid; gap: 6px; }
+    .field-full { grid-column: 1 / -1; }
+    .field label { font-size: 11px; font-weight: 700; }
+    .field input, .field select { width: 100%; min-height: 47px; padding: 0 12px; border: 1px solid #c9c7bd; border-radius: 0; outline: none; background: var(--white); color: var(--ink); font-size: 13px; }
+    .field input:focus, .field select:focus { border-color: var(--coral-dark); box-shadow: 0 0 0 2px rgb(201 67 49 / 12%); }
+    .form-note { grid-column: 1 / -1; margin: -4px 0 0; color: var(--muted); font-size: 11px; }
+    .booking-form .button { grid-column: 1 / -1; width: 100%; margin-top: 2px; border: 0; cursor: pointer; }
+
+    .footer { padding-block: 26px; border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer p { margin: 0; color: var(--muted); font-size: 10px; }
+    .footer-links { display: flex; gap: 18px; }
+    .footer-links a { font-size: 11px; font-weight: 600; text-decoration: none; }
+
+    @media (min-width: 1300px) {
+      .about { padding-inline: max(32px, calc((100% - 1180px) / 2)); }
+    }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 40px, 560px); }
+      .topbar { min-height: 67px; }
+      .nav { gap: 14px; }
+      .nav a:not(.nav-cta) { display: none; }
+      .nav-cta { min-height: 37px; padding-inline: 12px; font-size: 11px; }
+      .hero { min-height: 0; grid-template-columns: 1fr; gap: 38px; padding-block: 45px 56px; }
+      .hero-copy { padding: 0; }
+      .hero h1 { max-width: 510px; font-size: clamp(57px, 13vw, 83px); }
+      .hero-text { margin-top: 19px; }
+      .hero-rating { margin-top: 24px; }
+      .hero-image { width: min(82%, 390px); justify-self: center; }
+      .hero-image img { height: 350px; }
+      .image-caption { right: -24px; }
+      .portfolio { padding-block: 72px; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 13px; }
+      .gallery { grid-template-columns: 1fr 1fr; gap: 11px; margin-top: 25px; }
+      .work:first-child { grid-column: 1 / -1; }
+      .work img, .work:first-child img { height: 275px; }
+      .work:first-child img { height: 370px; }
+      .work-label { right: 8px; bottom: 8px; left: 8px; padding: 9px; font-size: 14px; }
+      .about { grid-template-columns: 1fr; gap: 31px; padding: 45px 20px; }
+      .about-art { min-height: 255px; }
+      .about-copy h2 { font-size: 45px; }
+      .booking { grid-template-columns: 1fr; gap: 34px; padding-block: 73px; }
+    }
+    @media (max-width: 420px) {
+      .wrap { width: calc(100% - 32px); }
+      .brand-name { font-size: 17px; }
+      .brand-mark { width: 33px; }
+      .hero h1 { font-size: 56px; }
+      .hero-image { width: 86%; }
+      .hero-image img { height: 315px; }
+      .gallery { grid-template-columns: 1fr; }
+      .work:first-child { grid-column: auto; }
+      .work img, .work:first-child img { height: 340px; }
+      .booking-form { grid-template-columns: 1fr; }
+      .field-full, .form-note, .booking-form .button { grid-column: auto; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar wrap">
+    <a class="brand" href="#inicio" aria-label="Alter Ego Studio, início">
+      <span class="brand-mark" aria-hidden="true">A</span>
+      <span class="brand-name">Alter Ego<span class="brand-sub">Studio Nail Art</span></span>
+    </a>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="#trabalhos">Trabalhos</a>
+      <a href="#studio">O studio</a>
+      <a class="nav-cta" href="#agendar">Agendar <span class="arrow" aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow">Poços de Caldas · MG</p>
+        <h1>Unhas com<br>um toque de <em>você.</em></h1>
+        <p class="hero-text">Um espaço para expressar seu estilo nos detalhes. Nail art feita com cuidado, conversa boa e atenção a cada escolha.</p>
+        <div class="hero-actions">
+          <a class="button" href="#agendar">Encontrar meu horário <span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="button button-light" href="#trabalhos">Ver trabalhos</a>
+        </div>
+        <div class="hero-rating" aria-label="Nota 5 de 5, com 15 avaliações no Google">
+          <span class="stars" aria-hidden="true">★★★★★</span><strong>5,0</strong><span>15 avaliações no Google</span>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SmbKbqdtDfJVZDeMYGt2mJ3Yn9UpB5n-l69uKOBLZFl_AAA8k5E-9sp2sXgPDGXqaY-nRSFiFVG2sjXxkvf390jSDFXZtdoO1U79ama4LpwrcIiYrLWbkV-vOIjliCf3ebzHB_Bma_omk=w224-h298-k-no" alt="Trabalho de nail art do Alter Ego Studio" fetchpriority="high">
+        <div class="image-caption">Pequenos detalhes.<br>Uma grande diferença.<b>Alter Ego Studio</b></div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-inner">
+        <span>Nail art com personalidade</span><i>✳</i><span>Seu estilo, em cada detalhe</span><i>✳</i><span>Feito com cuidado</span><i>✳</i><span>Nail art com personalidade</span><i>✳</i><span>Seu estilo, em cada detalhe</span><i>✳</i><span>Feito com cuidado</span><i>✳</i>
+      </div>
+    </div>
+
+    <section class="portfolio wrap" id="trabalhos">
+      <div class="section-head">
+        <div><p class="eyebrow">Feito à mão, do seu jeito</p><h2 class="serif">Ideias que viram<br><em>detalhes.</em></h2></div>
+        <p>Um pouco do trabalho que já passou por aqui. Cada criação começa com uma conversa sobre o que combina com você.</p>
+      </div>
+      <div class="gallery">
+        <article class="work">
+          <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TfDMEZLO8TXUA4uazncHmgUUZ18TK3PMRwBKyyb0x_r24RJLj9CMiWTLj8yPytUb0QZMzw5g3hla2hHg9HtYR4Voe54kWE2VFT6yOBsLg7fijEQkLJvZTL6pvuy2h0vFLe_WJOaS_zorc=w224-h298-k-no" alt="Nail art criativa feita no Alter Ego Studio" loading="lazy">
+          <div class="work-label"><span>Cor e expressão</span><span>01</span></div>
+        </article>
+        <article class="work">
+          <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Si7mDUSBsIkS3nFIlM3pfsLU8EeoeBTdY09sUHFAq6p0r8cKK_eMO8pv8VPmBFTFrWKA8CCjrU2msls0QlFYhVr81p10CMq6D_0iIhKpF1Z2aOCHqAC6yZGUK4i7l2UwyjurIZrIKC-Yxc=w224-h298-k-no" alt="Detalhes de unha registrados pelo studio" loading="lazy">
+          <div class="work-label"><span>Detalhes únicos</span><span>02</span></div>
+        </article>
+        <article class="work">
+          <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SmbKbqdtDfJVZDeMYGt2mJ3Yn9UpB5n-l69uKOBLZFl_AAA8k5E-9sp2sXgPDGXqaY-nRSFiFVG2sjXxkvf390jSDFXZtdoO1U79ama4LpwrcIiYrLWbkV-vOIjliCf3ebzHB_Bma_omk=w224-h298-k-no" alt="Criação de nail art do Alter Ego Studio" loading="lazy">
+          <div class="work-label"><span>Seu próximo estilo</span><span>03</span></div>
+        </article>
+      </div>
+      <p class="portfolio-note">Fotos do perfil do Alter Ego Studio no Google.</p>
+    </section>
+
+    <section class="about" id="studio">
+      <div class="about-art"><div class="about-quote">Beleza que<br>tem a sua <em>cara.</em></div></div>
+      <div class="about-copy">
+        <p class="eyebrow">Um tempo para você</p>
+        <h2>Seu momento,<br>seu Alter Ego.</h2>
+        <p>No Alter Ego, cada atendimento é pensado com carinho e cuidado. Traga uma referência, uma ideia ou só a vontade de experimentar: a gente cria juntas.</p>
+        <div class="about-details">
+          <span><i aria-hidden="true">✳</i> Atendimento cuidadoso</span>
+          <span><i aria-hidden="true">✳</i> Nail art personalizada</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking wrap" id="agendar">
+      <div class="booking-copy">
+        <p class="eyebrow">Vamos marcar?</p>
+        <h2 class="serif">Seu próximo<br>momento começa aqui.</h2>
+        <p>Conte qual serviço você procura e quando prefere. A solicitação abre uma conversa no WhatsApp para confirmar o horário.</p>
+        <div class="contact-lines">
+          <a href="tel:+5535984592727">(35) 98459-2727</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Alter+Ego+Studio+Nail+Art%2C+R.+Rio+de+Janeiro%2C+450%2C+Po%C3%A7os+de+Caldas%2C+MG" target="_blank" rel="noreferrer">R. Rio de Janeiro, 450 · Centro, Poços de Caldas ↗</a>
+        </div>
+      </div>
+      <form class="booking-form" id="booking-form">
+        <div class="field field-full">
+          <label for="name">Seu nome</label>
+          <input id="name" name="name" autocomplete="name" placeholder="Como podemos te chamar?" required>
+        </div>
+        <div class="field">
+          <label for="service">O que você procura?</label>
+          <select id="service" name="service" required>
+            <option value="" disabled selected>Escolha uma opção</option>
+            <option>Manicure</option>
+            <option>Nail art personalizada</option>
+            <option>Quero conversar sobre opções</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="date">Dia preferido</label>
+          <input id="date" name="date" type="date" required>
+        </div>
+        <div class="field field-full">
+          <label for="time">Período preferido</label>
+          <select id="time" name="time" required>
+            <option value="" disabled selected>Selecione o período</option>
+            <option>Manhã</option>
+            <option>Tarde</option>
+            <option>Noite</option>
+          </select>
+        </div>
+        <p class="form-note">O horário será confirmado diretamente pelo WhatsApp.</p>
+        <button class="button" type="submit">Pedir agendamento pelo WhatsApp <span class="arrow" aria-hidden="true">↗</span></button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner wrap">
+      <a class="brand" href="#inicio"><span class="brand-mark" aria-hidden="true">A</span><span class="brand-name">Alter Ego<span class="brand-sub">Studio Nail Art</span></span></a>
+      <p>Poços de Caldas, MG · Feito com cuidado.</p>
+      <div class="footer-links"><a href="#trabalhos">Trabalhos</a><a href="#agendar">Agendar</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const dateInput = document.querySelector("#date");
+    const today = new Date();
+    const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+    dateInput.min = localToday;
+
+    document.querySelector("#booking-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      const date = new Date(`${formData.get("date")}T12:00:00`).toLocaleDateString("pt-BR");
+      const message = [
+        "Olá! Gostaria de pedir um agendamento no Alter Ego Studio.",
+        `Nome: ${formData.get("name")}`,
+        `Serviço: ${formData.get("service")}`,
+        `Dia preferido: ${date}`,
+        `Período: ${formData.get("time")}`
+      ].join("\n");
+      window.open(`https://wa.me/5535984592727?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    });
+  </script>
+</body>
+</html>
